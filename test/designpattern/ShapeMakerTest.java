@@ -9,7 +9,7 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 
 /**
- *
+ *A JUnit test class to test the class ShapeMaker.
  * @author bellarao
  */
 public class ShapeMakerTest {

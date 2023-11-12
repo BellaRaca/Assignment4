@@ -5,11 +5,11 @@
 package designpattern;
 
 /**
- *
+ *Represents object whose shape is Circle.
  * @author bellarao
  */
 public class Circle implements Shape {
-
+    //Return the class name "Circle".
     @Override
     public String draw() {
         //return the class name "Circle".

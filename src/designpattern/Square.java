@@ -5,10 +5,11 @@
 package designpattern;
 
 /**
- *
+ *Represents object whose shape is Square.
  * @author bellarao
  */
 public class Square implements Shape {
+    //Return the class name "Square".
     @Override
     public String draw() {
       return "Square";
