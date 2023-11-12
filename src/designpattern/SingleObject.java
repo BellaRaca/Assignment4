@@ -9,6 +9,7 @@ package designpattern;
  * @author bellarao
  */
 public class SingleObject {
+
     // Identity of this object
     private String identity = "";
     //create an object of SingleObect
