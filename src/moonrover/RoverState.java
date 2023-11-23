@@ -14,7 +14,7 @@ package moonrover;
  * right pedal is pressed twice at once, switch the state to at rest.
  *
  * Left pedal is responsible for: 1. Accelerate. (pressed once) 2. Change from
- * moving forward to moving backward. (pressed for more than 3 seconds)
+ * At Rest to moving backward. (pressed for more than 3 seconds)
  *
  * Right pedal is responsible for: 1. Decelerate (pressed once) 2. Change to
  * constant speed (pressed for more than 3 seconds) 3. Change to at rest state
@@ -44,7 +44,7 @@ public class RoverState {
     }
 
     /**
-     * Press right pedal once.
+     * Press right pedal.
      *
      * @param numOfTimesPressed Use to get how many times the right pedal is
      * pressed
@@ -66,7 +66,7 @@ public class RoverState {
     }
 
     /**
-     * Press left pedal once.
+     * Press left pedal.
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
      * pressed

@@ -5,7 +5,7 @@
 package moonrover;
 
 /**
- *
+ * Represents Rover's MOVE_BACKWARD state.
  * @author bellarao
  */
 public class MoveBackward extends RoverState {
@@ -16,7 +16,7 @@ public class MoveBackward extends RoverState {
     }
 
     /**
-     * Press right pedal once.
+     * Press right pedal.
      *
      * @param numOfTimesPressed Use to get how many times the right pedal is
      * pressed. If numOfTimesPressed is 1, decelerate the rover. If
@@ -42,7 +42,7 @@ public class MoveBackward extends RoverState {
     }
 
     /**
-     * Press left pedal once.
+     * Press left pedal.
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
      * pressed. If numOfTimesPressed is 1, accelerate the rover.

@@ -17,10 +17,10 @@ public class AtRestState extends RoverState {
     }
 
     /**
-     * Press left pedal once.
+     * Press left pedal.
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
-     * pressed
+     * pressed. If numOfTimesPressed is 1, accelerate the rover forward.
      * @return whether the operation take any effect or not.
      */
     @Override
@@ -32,7 +32,7 @@ public class AtRestState extends RoverState {
      * Press left pedal for a certain number of seconds.
      *
      * @param numOfSecondsPressed Use to get how many seconds the right pedal is
-     * pressed
+     * pressed. If numOfSecondsPressed >= 3, accelerate rover backward.
      * @return whether the operation take any effect or not.
      */
     @Override
