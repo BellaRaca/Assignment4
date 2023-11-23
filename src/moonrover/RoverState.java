@@ -5,12 +5,20 @@
 package moonrover;
 
 /**
- * Rover has four states and the transition between different states follow the
- * following rules: 1. When the left pedal was pressed once it accelerates the
- * buggy forward. 2. If accelerating forward and you press right pedal once, it
- * decelerates. 3. To achieve constant forward speed press the right pedal for
- * more than 3 seconds. 4. If the buggy is at rest and the left pedal is pressed
- * for more than 3 seconds, it will accelerate backwards.
+ * Rover has three main states and the transition between different states
+ * follow the following rules: 1. When the left pedal was pressed once it
+ * accelerates the buggy forward. 2. If accelerating forward and you press right
+ * pedal once, it decelerates. 3. To achieve constant forward speed press the
+ * right pedal for more than 3 seconds. 4. If the buggy is at rest and the left
+ * pedal is pressed for more than 3 seconds, it will accelerate backwards. 5. If
+ * right pedal is pressed twice at once, switch the state to at rest.
+ *
+ * Left pedal is responsible for: 1. Accelerate. (pressed once) 2. Change from
+ * moving forward to moving backward. (pressed for more than 3 seconds)
+ *
+ * Right pedal is responsible for: 1. Decelerate (pressed once) 2. Change to
+ * constant speed (pressed for more than 3 seconds) 3. Change to at rest state
+ * (pressed twice)
  *
  * @author bellarao
  */
@@ -25,8 +33,8 @@ public class RoverState {
     enum SubState {
         DEFAULT_NONE_AT_REST,
         CONSTANT,
-        ACCELARATE,
-        DECELARATE,
+        ACCELERATE,
+        DECELERATE,
     }
 
     protected RoverState.State internalState = State.DEFAULT_AT_REST;
@@ -38,9 +46,11 @@ public class RoverState {
     /**
      * Press right pedal once.
      *
+     * @param numOfTimesPressed Use to get how many times the right pedal is
+     * pressed
      * @return whether the operation take any effect or not.
      */
-    public Boolean pressRightPedalOnce() {
+    public Boolean pressRightPedal(int numOfTimesPressed) {
         return false;
     }
 
@@ -58,9 +68,11 @@ public class RoverState {
     /**
      * Press left pedal once.
      *
+     * @param numOfTimesPressed Use to get how many times the left pedal is
+     * pressed
      * @return whether the operation take any effect or not.
      */
-    protected Boolean pressLeftPedalOnce() {
+    protected Boolean pressLeftPedal(int numOfTimesPressed) {
         return false;
     }
 
@@ -80,7 +92,7 @@ public class RoverState {
      *
      * @return the name of the state.
      */
-    protected String getStateName() {
+    public String getStateName() {
         return String.format("InternalState: %s, SubState: %s", internalState.name(), subState.name());
     }
 }
