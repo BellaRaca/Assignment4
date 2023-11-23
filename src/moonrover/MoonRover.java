@@ -1,0 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package moonrover;
+
+/**
+ *
+ * @author bellarao
+ */
+public class MoonRover {
+
+    private RoverState currentState;
+
+    public MoonRover() {
+        currentState = new RoverState();
+    }
+
+}

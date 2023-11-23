@@ -9,7 +9,7 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 
 /**
- *
+ *A JUnit test class to test the class ShapeFactory.
  * @author bellarao
  */
 public class ShapeFactoryTest {

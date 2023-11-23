@@ -11,6 +11,7 @@ package designpattern;
 public class FactoryPatternDemo {
 
     public static void main(String[] args) {
+        //Create a new ShapeFactory.
         ShapeFactory factory = new ShapeFactory();
         
         // Get an object of Circle

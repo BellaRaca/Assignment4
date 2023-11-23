@@ -5,7 +5,7 @@
 package designpattern;
 
 /**
- *
+ * A Factory that can create shape according to shape type.
  * @author bellarao
  */
 public class ShapeFactory {
