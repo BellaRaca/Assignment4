@@ -22,11 +22,15 @@ public class MoveForwardState extends RoverState {
      * @param numOfTimesPressed Use to get how many times the right pedal is
      * pressed. If numOfTimesPressed is 1, decelerate the rover. If
      * numOfTimesPressed is 2, stop the rover.
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
     @Override
-    public Boolean pressRightPedal(int numOfTimesPressed) {
-        return numOfTimesPressed == 1 || numOfTimesPressed == 2;
+    public RoverState pressRightPedal(int numOfTimesPressed) {
+        if (numOfTimesPressed == 1) {
+          subState = RoverState.SubState.DECELERATE;
+          return this;
+        }
+        return numOfTimesPressed == 2 ? new AtRestState() : this;
     }
 
     /**
@@ -35,11 +39,14 @@ public class MoveForwardState extends RoverState {
      * @param numOfSecondsPressed Use to get how many seconds the right pedal is
      * pressed. If numOfSecondsPressed is equal to or more than 3 seconds,
      * switch to constant mode.
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
     @Override
-    protected Boolean pressRightPedalForTime(int numOfSecondsPressed) {
-        return numOfSecondsPressed >= 3;
+    protected RoverState pressRightPedalForTime(int numOfSecondsPressed) {
+        if (numOfSecondsPressed >= 3) {
+         subState = SubState.CONSTANT;
+        }
+        return this;
     }
 
     /**
@@ -47,10 +54,13 @@ public class MoveForwardState extends RoverState {
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
      * pressed. If numOfTimesPressed is 1, accelerate the rover.
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
     @Override
-    protected Boolean pressLeftPedal(int numOfTimesPressed) {
-        return numOfTimesPressed == 1;
+    protected RoverState pressLeftPedal(int numOfTimesPressed) {
+        if (numOfTimesPressed == 1) {
+          subState = SubState.ACCELERATE;
+        }
+        return this;
     }
 }

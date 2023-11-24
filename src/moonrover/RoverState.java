@@ -48,10 +48,10 @@ public class RoverState {
      *
      * @param numOfTimesPressed Use to get how many times the right pedal is
      * pressed
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
-    public Boolean pressRightPedal(int numOfTimesPressed) {
-        return false;
+    public RoverState pressRightPedal(int numOfTimesPressed) {
+        return this;
     }
 
     /**
@@ -59,10 +59,10 @@ public class RoverState {
      *
      * @param numOfSecondsPressed Use to get how many seconds the right pedal is
      * pressed
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
-    protected Boolean pressRightPedalForTime(int numOfSecondsPressed) {
-        return false;
+    protected RoverState pressRightPedalForTime(int numOfSecondsPressed) {
+        return this;
     }
 
     /**
@@ -70,21 +70,21 @@ public class RoverState {
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
      * pressed
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
-    protected Boolean pressLeftPedal(int numOfTimesPressed) {
-        return false;
+    protected RoverState pressLeftPedal(int numOfTimesPressed) {
+        return this;
     }
 
     /**
      * Press left pedal for a certain number of seconds.
      *
-     * @param numOfSecondsPressed Use to get how many seconds the right pedal is
+     * @param numOfSecondsPressed Use to get how many seconds the left pedal is
      * pressed
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
-    protected Boolean pressLeftPedalForTime(int numOfSecondsPressed) {
-        return false;
+    protected RoverState pressLeftPedalForTime(int numOfSecondsPressed) {
+        return this;
     }
 
     /**

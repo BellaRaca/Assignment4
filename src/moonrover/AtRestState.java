@@ -21,22 +21,22 @@ public class AtRestState extends RoverState {
      *
      * @param numOfTimesPressed Use to get how many times the left pedal is
      * pressed. If numOfTimesPressed is 1, accelerate the rover forward.
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
     @Override
-    protected Boolean pressLeftPedal(int numOfTimesPressed) {
-        return numOfTimesPressed == 1;
+    protected RoverState pressLeftPedal(int numOfTimesPressed) {
+        return numOfTimesPressed == 1 ? new MoveForwardState() : this;
     }
 
     /**
      * Press left pedal for a certain number of seconds.
      *
-     * @param numOfSecondsPressed Use to get how many seconds the right pedal is
+     * @param numOfSecondsPressed Use to get how many seconds the left pedal is
      * pressed. If numOfSecondsPressed >= 3, accelerate rover backward.
-     * @return whether the operation take any effect or not.
+     * @return the latest state.
      */
     @Override
-    protected Boolean pressLeftPedalForTime(int numOfSecondsPressed) {
-        return numOfSecondsPressed >= 3;
+    protected RoverState pressLeftPedalForTime(int numOfSecondsPressed) {
+        return numOfSecondsPressed >= 3 ? new MoveBackwardState() : this;
     }
 }
