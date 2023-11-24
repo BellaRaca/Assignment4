@@ -9,7 +9,7 @@ import org.junit.Before;
 import static org.junit.Assert.*;
 
 /**
- *
+ * RoverState general tests.
  * @author bellarao
  */
 public class RoverStateTest {
