@@ -64,6 +64,10 @@ public class MoonRover {
     private void printStateAndSubState() {
         System.out.println(this.currentState.getStateName());
     }
+    
+    public RoverState getCurrentState() {
+      return this.currentState;
+    }
 
     public static void main(String[] args) {
         MoonRover rover = new MoonRover();
